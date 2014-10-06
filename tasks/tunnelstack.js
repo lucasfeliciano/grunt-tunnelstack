@@ -3,15 +3,18 @@
 module.exports = function tunnelstack (grunt) {
   var BrowserStackTunnel = require('browserstacktunnel-wrapper');
 
-  grunt.registerTask('tunnelstack:start', function(){
+  var tunnel = {};
 
-    var browserStackTunnel = new BrowserStackTunnel(this.options);
-
+  grunt.registerTask('tunnelstack', function(){
     var done = this.async();
-    browserStackTunnel.start(function(error) {
+
+    tunnel = new BrowserStackTunnel(this.options());
+
+    tunnel.start(function(error) {
+      console.error(error);
       if (error) {
         console.log(error);
-        done();
+        done(error);
       } else {
         console.log('Tunnel Up');
         done();
@@ -19,13 +22,12 @@ module.exports = function tunnelstack (grunt) {
     });
   });
 
-
   grunt.registerTask('tunnelstack:stop', function(){
     var done = this.async();
-    browserStackTunnel.stop(function(error) {
+    tunnel.stop(function(error) {
       if (error) {
         console.log(error);
-        done();
+        done(error);
       } else {
         console.log('Tunnel Down');
         done();
