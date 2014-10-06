@@ -1,0 +1,32 @@
+{
+  "name": "grunt-tunnelstack",
+  "version": "0.0.0",
+  "description": "A grunt plugin to start and stop and download browserstack tunnel.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasfeliciano/grunt-tunnelstack.git"
+  },
+  "keywords": [
+    "browserstack",
+    "tunnel",
+    "ssh",
+    "test",
+    "start",
+    "stop",
+    "launch",
+    "integration",
+    "interface"
+  ],
+  "author": "Lucas Feliciano <mail@lucasfeliciano.com> (http://lucasfeliciano.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasfeliciano/grunt-tunnelstack/issues"
+  },
+  "homepage": "https://github.com/lucasfeliciano/grunt-tunnelstack",
+  "dependencies": {
+    "browserstacktunnel-wrapper": "^1.3.1"
+  }
+}
