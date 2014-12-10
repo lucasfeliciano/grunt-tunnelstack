@@ -1,4 +1,4 @@
-grunt-tunnelstack
+grunt-localstack
 =======================
 
 A grunt plugin to start and stop BrowserStack's tunnel client. On first run this will download the appropriate binary for your platform from BrowserStack. On Windows this will be a Jar file and you will need to have Java already installed.
@@ -8,7 +8,7 @@ For BrowserStack documentation see: http://www.browserstack.com/
 ## Installation
 
 ```
-npm install grunt-tunnelstack
+npm install grunt-localstack
 ```
 
 ## Usage
@@ -17,36 +17,57 @@ npm install grunt-tunnelstack
 ### Load task
 
 ```javascript
-grunt.loadNpmTasks('grunt-tunnelstack');
+grunt.loadNpmTasks('grunt-localstack');
 ```
 
-### Options
+### Task Options
 
-Configure tunnelstack in your Gruntfile.js
+Configure localstack in your Gruntfile.js
+
+#### Basic config
+
 ```javascript
-
-tunnelstack: {
-  options: {
-    key: YOUR_KEY,
-    hosts: [{
-      name: 'localhost',
-      port: 8080,
-      sslFlag: 0
-    }],
-    osxBin: 'your_bin_dir', // optionally override the default bin directory for the OSX binary
-    linux32Bin: 'your_bin_dir', // optionally override the default bin directory for the Linux 32 bit binary
-    linux64Bin: 'your_bin_dir', // optionally override the default bin directory for the Linux 64 bit binary
-    win32Bin: 'your_bin_dir', // optionally override the default bin directory for the win32 binary
-    tunnelIdentifier: 'my_tunnel', // optionally set the -tunnelIdentifier option
-    skipCheck: true, // optionally set the -skipCheck option
-    v: true, // optionally set the -v (verbose) option
-    proxyUser: PROXY_USER, // optionally set the -proxyUser option
-    proxyPass: PROXY_PASS, // optionally set the -proxyPass option
-    proxyPort: PROXY_PORT, // optionally set the -proxyPort option
-    proxyHost: PROXY_HOST, // optionally set the -proxyHost option
-    force: false // optionally set the -force option
+grunt.initConfig({
+  localstack: {
+    options: {
+      key: YOUR_KEY,
+      hosts: [{
+        name: 'localhost',
+        port: 8080,
+        sslFlag: 0
+      }]
+    }
   }
 });
+
+```
+
+#### Optional options
+```javascript
+// override the default bin directory for the OSX binary
+osxBin: 'your_bin_dir',
+// override the default bin directory for the Linux 32 bit binary
+linux32Bin: 'your_bin_dir',
+// override the default bin directory for the Linux 64 bit binary
+linux64Bin: 'your_bin_dir',
+// override the default bin directory for the win32 binary
+win32Bin: 'your_bin_dir',
+// set the -tunnelIdentifier option
+tunnelIdentifier: 'my_tunnel',
+// set the -skipCheck option
+skipCheck: true,
+// set the -v (verbose) option
+v: true,
+// set the -proxyUser option
+proxyUser: PROXY_USER,
+// set the -proxyPass option
+proxyPass: PROXY_PASS,
+// set the -proxyPort option
+proxyPort: PROXY_PORT,
+// set the -proxyHost option
+proxyHost: PROXY_HOST,
+// set the -force option
+force: false
 ```
 
 ### Tasks
@@ -54,13 +75,13 @@ tunnelstack: {
 To start browserstack binary use:
 
 ```
-tunnelstack
+localstack
 ```
 
 To stop browserstack binary use:
 
 ```
-tunnelstack:stop
+localstack:stop
 ```
 
 
