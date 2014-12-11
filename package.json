@@ -1,5 +1,5 @@
 {
-  "name": "grunt-localstack",
+  "name": "grunt-tunnelstack",
   "version": "1.0.0",
   "description": "A grunt plugin to start and stop and download browserstack tunnel.",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucasfeliciano/grunt-localstack.git"
+    "url": "https://github.com/lucasfeliciano/grunt-tunnelstack.git"
   },
   "keywords": [
     "browserstack",
@@ -23,9 +23,9 @@
   "author": "Lucas Feliciano <mail@lucasfeliciano.com> (http://lucasfeliciano.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lucasfeliciano/grunt-localstack/issues"
+    "url": "https://github.com/lucasfeliciano/grunt-tunnelstack/issues"
   },
-  "homepage": "https://github.com/lucasfeliciano/grunt-localstack",
+  "homepage": "https://github.com/lucasfeliciano/grunt-tunnelstack",
   "dependencies": {
     "browserstacktunnel-wrapper": "^1.3.1"
   }

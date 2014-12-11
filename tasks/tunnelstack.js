@@ -1,17 +1,17 @@
 'use strict';
 
-module.exports = function localstack (grunt) {
+module.exports = function tunnelstack (grunt) {
   var BrowserStackTunnel = require('browserstacktunnel-wrapper');
 
   var tunnel = {};
 
-  grunt.registerTask('localstack', function(){
+  grunt.registerTask('tunnelstack', function(){
     var done = this.async();
 
     tunnel = new BrowserStackTunnel(this.options());
 
     tunnel.start(function(error) {
-
+      console.error(error);
       if (error) {
         console.log(error);
         done(error);
@@ -22,9 +22,8 @@ module.exports = function localstack (grunt) {
     });
   });
 
-  grunt.registerTask('localstack:stop', function(){
+  grunt.registerTask('tunnelstack:stop', function(){
     var done = this.async();
-    
     tunnel.stop(function(error) {
       if (error) {
         console.log(error);
