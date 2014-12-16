@@ -1,7 +1,7 @@
 {
   "name": "grunt-tunnelstack",
-  "version": "1.0.1",
-  "description": "A grunt plugin to start and stop and download browserstack tunnel.",
+  "version": "1.0.2",
+  "description": "Please use grunt-localstack instead.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
